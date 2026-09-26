@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Produit | DIOP BUSINESS-CENTER</title>
+
+    <meta name="description"
+          content="Découvrez les détails de nos produits.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f6f9f7;
+            color: #222;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #138a4b;
+        }
+
+        .logo span {
+            color: #222;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #138a4b;
+        }
+
+        .cart {
+            background: #138a4b;
+            color: white !important;
+            padding: 10px 18px;
+            border-radius: 25px;
+        }
+
+        /* =========================
+           PRODUIT
+        ========================= */
+
+        .product-page {
+            max-width: 1150px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 25px;
+
+            text-decoration: none;
+
+            color: #138a4b;
+
+            font-weight: bold;
+        }
+
+        .product-details {
+            background: white;
+
+            border-radius: 22px;
+
+            padding: 35px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 50px;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 500px;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+        }
+
+        .category {
+            color: #138a4b;
+
+            text-transform: uppercase;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            margin-bottom: 12px;
+        }
+
+        .product-info h1 {
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #666;
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+        }
+
+        .price {
+            color: #138a4b;
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            margin-bottom: 25px;
+        }
+
+        .availability {
+            display: inline-block;
+
+            background: #e8f7ef;
+
+            color: #138a4b;
+
+            padding: 8px 14px;
+
+            border-radius: 20px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           QUANTITE
+        ========================= */
+
+        .quantity-box {
+            margin-bottom: 25px;
+        }
+
+        .quantity-box label {
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+        .quantity {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .quantity button {
+            width: 38px;
+            height: 38px;
+
+            border: none;
+
+            background: #138a4b;
+
+            color: white;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+            font-size: 20px;
+        }
+
+        .quantity span {
+            min-width: 30px;
+
+            text-align: center;
+
+            font-size: 18px;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           BOUTONS
+        ========================= */
+
+        .buttons {
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: none;
+
+            padding: 14px 22px;
+
+            border-radius: 30px;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 15px;
+        }
+
+        .btn-cart {
+            background: #138a4b;
+
+            color: white;
+        }
+
+        .btn-cart:hover {
+            background: #0d6d3a;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1da851;
+        }
+
+        /* =========================
+           INFORMATIONS
+        ========================= */
+
+        .information {
+            margin-top: 35px;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .information h2 {
+            color: #138a4b;
+
+            margin-bottom: 15px;
+        }
+
+        .information p {
+            color: #666;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            margin-top: 70px;
+        }
+
+        footer p {
+            color: #ccc;
+
+            margin: 7px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .menu {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .product-details {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+            .product-image {
+                height: 350px;
+            }
+
+            .product-info h1 {
+                font-size: 32px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            DIOP <span>BUSINESS-CENTER</span>
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="index.html">
+                    Accueil
+                </a>
+            </li>
+
+            <li>
+                <a href="produits.html">
+                    Produits
+                </a>
+            </li>
+
+            <li>
+                <a href="panier.html"
+                   class="cart">
+
+                    🛒 Panier
+
+                    (<span id="cart-count">0</span>)
+
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     PRODUIT
+========================= -->
+
+<main class="product-page">
+
+    <a
+        href="produits.html"
+        class="back"
+    >
+        ← Retour aux produits
+    </a>
+
+
+    <div class="product-details">
+
+
+        <!-- IMAGE -->
+
+        <div>
+
+            <img
+                id="product-image"
+                class="product-image"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+
+        <!-- INFORMATIONS -->
+
+        <div class="product-info">
+
+            <div
+                id="product-category"
+                class="category"
+            ></div>
+
+
+            <h1 id="product-name">
+                Produit
+            </h1>
+
+
+            <p
+                id="product-description"
+                class="description"
+            ></p>
+
+
+            <div
+                id="product-price"
+                class="price"
+            ></div>
+
+
+            <div
+                class="availability"
+                id="availability"
+            >
+                ✓ Disponible
+            </div>
+
+
+            <!-- QUANTITE -->
+
+            <div class="quantity-box">
+
+                <label>
+                    Quantité
+                </label>
+
+                <div class="quantity">
+
+                    <button
+                        onclick="decreaseQuantity()"
+                    >
+                        −
+                    </button>
+
+                    <span id="quantity">
+                        1
+                    </span>
+
+                    <button
+                        onclick="increaseQuantity()"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOUTONS -->
+
+            <div class="buttons">
+
+                <button
+                    class="btn btn-cart"
+                    onclick="addProductToCart()"
+                >
+                    🛒 Ajouter au panier
+                </button>
+
+
+                <button
+                    class="btn btn-whatsapp"
+                    onclick="orderDirectly()"
+                >
+                    📱 Commander
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- INFORMATIONS -->
+
+    <div class="information">
+
+        <h2>
+            Informations sur le produit
+        </h2>
+
+        <p id="product-info">
+        </p>
+
+    </div>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 DIOP BUSINESS-CENTER
+    </p>
+
+    <p>
+        Bien-être • Produits • Information • Service
+    </p>
+
+</footer>
+
+
+
+<script>
+
+    /* =========================
+       BASE DE PRODUITS
+    ========================= */
+
+    const products = {
+
+        "Forever-marin-collagen": {
+
+            name: "Forever marin collagen",
+
+            category: "Soin",
+
+            price: 64000,
+
+            image:
+            "collagene.jpg",
+            image:
+            "Marin collagen.jpg",
+
+            description:
+            "Il permet une bonne préservation des articulations et contribue au maintien de l'élasticité, de la résistance, de la cohésion et de la régénération de la peau",
+
+            info:
+            "Les informations détaillées, les conditions de disponibilité et le prix doivent être confirmés auprès de DIOP BUSINESS-CENTER avant toute commande."
+
+        },
+
+
+        "boisson-aloe": {
+
+            name: "Boisson Aloe Vera",
+
+            category: "Nutrition",
+
+            price: 18000,
+
+            image:
+            "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=1000&q=80",
+
+            description:
+            "Découvrez notre sélection de produits liés à la nutrition et au bien-être.",
+
+            info:
+            "Pour connaître les informations détaillées concernant ce produit, contactez DIOP BUSINESS-CENTER."
+
+        },
+
+
+        "soin-visage": {
+
+            name: "Soin visage",
+
+            category: "Beauté",
+
+            price: 12000,
+
+            image:
+            "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1000&q=80",
+
+            description:
+            "Découvrez notre sélection de produits destinés aux soins et à la beauté.",
+
+            info:
+            "Les informations concernant l'utilisation et la disponibilité du produit peuvent être obtenues auprès de DIOP BUSINESS-CENTER."
+
+        },
+
+
+            "gel-soin": {
+
+            name: "Gel soin peau",
+
+            category: "Soins",
+
+            price: 10000,
+
+            image:
+            "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1000&q=80",
+
+            description:
+            "Découvrez notre sélection de produits destinés aux soins personnels.",
+
+            info:
+            "Contactez-nous pour connaître les informations disponibles concernant ce produit."
+
+        },
+                "forever-bright-toothgel": {
+
+            name: "Forever Bright Toothgel",
+
+            category: "Soins",
+
+            price: 6000,
+
+            image:
+            "forever-bright-toothgel.jpg",
+
+            description:
+            "Forever Bright Toothgel avec aloe vera et propolis. L'emballage indique également une formule sans fluorure et une saveur naturelle de menthe.",
+
+            info:
+            "Produit présenté par DIOP BUSINESS-CENTER. Pour connaître la disponibilité et les conditions de commande, contactez-nous."
+        },"forever-aloe-vera-gel": {
+
+    name: "Forever Aloe Vera Gel",
+
+    category: "Soins",
+
+    price: 18500,
+
+    image:
+    "Forever_Aloe_Vera_Gel A.jpg",
+
+    description:
+    "Forever Aloe Vera Gel, une boisson à base d'aloe vera destinée à accompagner votre routine quotidienne de bien-être.",
+
+    info:
+    "Produit présenté par DIOP BUSINESS-CENTER. Pour connaître la disponibilité et les conditions de commande, contactez-nous."
+},
+
+        "Berry-Nectar": {
+
+            name: "Berry Nectar",
+
+            category: "Boissons",
+
+            price: 18500,
+
+            image:
+            "Berry.jpg",
+
+            description:
+            "Découvrez notre sélection de produits de nutrition et de bien-être.",
+
+            info:
+            "Contactez DIOP BUSINESS-CENTER pour obtenir les informations disponibles concernant ce produit."
+
+        },
+                "soin-beaute": {
+
+            name: "Soin beauté",
+
+            category: "Beauté",
+
+            price: 14000,
+
+            image:
+            "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1000&q=80",
+
+            description:
+            "Produits de beauté et de soins pour votre routine quotidienne.",
+
+            info:
+            "Contactez DIOP BUSINESS-CENTER pour obtenir les informations disponibles concernant ce produit."
+
+        }
+
+    };
+
+
+    /* =========================
+       LIRE LE PRODUIT
+       DANS L'URL
+    ========================= */
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const productId =
+        params.get("produit");
+
+
+    const product =
+        products[productId];
+
+
+    /* =========================
+       AFFICHER LE PRODUIT
+    ========================= */
+
+    if (product) {
+
+        document.title =
+            product.name +
+            " | DIOP BUSINESS-CENTER";
+
+
+        document.getElementById(
+            "product-image"
+        ).src =
+            product.image;
+
+
+        document.getElementById(
+            "product-image"
+        ).alt =
+            product.name;
+
+
+        document.getElementById(
+            "product-category"
+        ).textContent =
+            product.category;
+
+
+        document.getElementById(
+            "product-name"
+        ).textContent =
+            product.name;
+
+
+        document.getElementById(
+            "product-description"
+        ).textContent =
+            product.description;
+
+
+        document.getElementById(
+            "product-price"
+        ).textContent =
+            product.price.toLocaleString("fr-FR") +
+            " FCFA";
+
+
+        document.getElementById(
+            "product-info"
+        ).textContent =
+            product.info;
+
+    }
+
+
+    /* =========================
+       QUANTITE
+    ========================= */
+
+    let quantity = 1;
+
+
+    function increaseQuantity() {
+
+        quantity++;
+
+        document.getElementById(
+            "quantity"
+        ).textContent = quantity;
+
+    }
+
+
+    function decreaseQuantity() {
+
+        if (quantity > 1) {
+
+            quantity--;
+
+        }
+
+        document.getElementById(
+            "quantity"
+        ).textContent = quantity;
+
+    }
+
+
+    /* =========================
+       AJOUTER AU PANIER
+    ========================= */
+
+    function addProductToCart() {
+
+        if (!product) {
+
+            alert(
+                "Produit introuvable."
+            );
+
+            return;
+
+        }
+
+
+        let cart =
+            JSON.parse(
+                localStorage.getItem("diopCart")
+            ) || [];
+
+
+        const existing =
+            cart.find(function(item) {
+
+                return item.name ===
+                    product.name;
+
+            });
+
+
+        if (existing) {
+
+            existing.quantity += quantity;
+
+        } else {
+
+            cart.push({
+
+                name:
+                    product.name,
+
+                price:
+                    product.price,
+
+                quantity:
+                    quantity
+
+            });
+
+        }
+
+
+        localStorage.setItem(
+            "diopCart",
+            JSON.stringify(cart)
+        );
+
+
+        updateCartCount();
+
+
+        alert(
+            "✅ " +
+            product.name +
+            " a été ajouté au panier."
+        );
+
+    }
+
+
+    /* =========================
+       COMPTEUR PANIER
+    ========================= */
+
+    function updateCartCount() {
+
+        let cart =
+            JSON.parse(
+                localStorage.getItem("diopCart")
+            ) || [];
+
+
+        let count = 0;
+
+
+        cart.forEach(function(item) {
+
+            count += item.quantity;
+
+        });
+
+
+        document.getElementById(
+            "cart-count"
+        ).textContent = count;
+
+    }
+
+
+    /* =========================
+       COMMANDE DIRECTE
+    ========================= */
+
+    function orderDirectly() {
+
+        if (!product) {
+
+            return;
+
+        }
+
+
+        const customerName =
+            prompt(
+                "Votre nom complet :"
+            );
+
+
+        if (!customerName) {
+
+            return;
+
+        }
+
+
+        const phone =
+            prompt(
+                "Votre numéro de téléphone :"
+            );
+
+
+        if (!phone) {
+
+            return;
+
+        }
+
+
+        let message =
+            "Bonjour DIOP BUSINESS-CENTER 👋\n\n";
+
+
+        message +=
+            "📋 COMMANDE\n\n";
+
+
+        message +=
+            "👤 Nom : " +
+            customerName +
+            "\n";
+
+
+        message +=
+            "📞 Téléphone : " +
+            phone +
+            "\n\n";
+
+
+        message +=
+            "🛍️ Produit : " +
+            product.name +
+            "\n";
+
+
+        message +=
+            "🔢 Quantité : " +
+            quantity +
+            "\n";
+
+
+        message +=
+            "💰 Total : " +
+            (
+                product.price *
+                quantity
+            ).toLocaleString("fr-FR") +
+            " FCFA";
+
+
+        const whatsappNumber =
+            "221706238561";
+
+
+        const url =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+    }
+
+
+    /* =========================
+       INITIALISATION
+    ========================= */
+
+    updateCartCount();
+
+</script>
+
+
+</body>
+
+</html>
